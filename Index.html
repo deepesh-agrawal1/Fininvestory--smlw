@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Learning</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha', cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 45px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+    .nav-items button {
+    width: 100% - 22px;
+    padding: 10px;
+    background-color: #117a36;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #3b9b0f;
+    padding-top: 20px;
+    transition: left 0.3s ease; 
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.side-menu ul li {
+    padding: 10px;
+}
+
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.side-menu ul li a:hover {
+    background-color: #4c8b64;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: #0f100f;
+    z-index: 999; 
+}
+
+
+
+
+
+ 
+.intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("image\first.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+.achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements button{
+      border-radius: 1cm;
+      background-color: #28b261;
+      color: #FFFFFF;
+      align-items: flex-end;
+    }    
+    .achievements .work {
+      display: block;
+      
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+
+    .contact-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-box {
+        width: 100%;
+        padding: 20px;
+        background-color: #f6fff6; 
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgb(23, 182, 25); 
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .contact-text {
+        font-size: 24px; 
+    }
+
+    .contact-button {
+        padding: 10px 20px;
+        background-color: #12dd12; 
+        color: #f6fcf7; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s; 
+    }
+
+    .contact-button:hover {
+        background-color: #FFFFFF; 
+        color: #2E8B57; 
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 80px;
+      border-bottom:2px solid #94ce82;
+      background-color: #117a36;
+    }
+
+  .about-me iframe {
+  width: 500px; 
+  
+  max-width: 100%;
+  
+  border-radius: 10px;
+  margin-left: 20px; 
+}
+    
+  .about-me iframe {
+  aspect-ratio: 16 / 9; 
+}
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #fafafa;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 2cm;
+    }
+
+    .about-me-text p {
+      font-size: 18px;
+      color: #d6d6d6;
+      margin: 10px 0;
+     
+    }
+
+    .first-me {
+  display: flex;
+  padding: 40px 80px;
+  border-bottom: 2px solid #f6f9f5;
+  background-color: #faf5f5;
+}
+
+.first-me iframe {
+  width: 500px; 
+  height: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px; 
+}
+
+.first-me iframe {
+  aspect-ratio: 16 / 9; 
+}
+
+
+.first-me-text {
+  flex: 1; 
+}
+
+.first-me-text h2 {
+  font-size: 30px;
+  color: #191717;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.first-me-text p {
+  font-size: 18px;
+  color: #3b3939;
+  margin: 10px 0;
+}
+
+  
+    
+.footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #228b22;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 30px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+    }
+ 
+</style>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Learn Trading</a>
+    <nav class="nav-items">
+      <a href="index.html">Home</a>
+      <a href="https://forms.gle/AKEhjFmrqvuRQ6f96">Enroll Now</a>
+      <a href="#">About</a>
+      <a href="form.html">Contact us </a>
+      <button onclick="window.location.href='login.php' ">Log_In</button>
+
+    </nav>
+  </header>
+  <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+  <div class="side-menu">
+    <br>
+    <br>
+    <ul style="list-style-type: circle;">
+        <li style="font-size: x-large;"><a href="Index.html">Home</a></li><br>
+
+        <li style="font-size: larger; font-style: italic; color: #000; "><u>Youtube channels list</u> </li>
+        <li><a href="https://youtube.com/playlist?list=PL8uhW8cclMiNv8UT1NUawB-XpXVeJ8mN8&si=C_BjCK2Co8PGkVwM">CA Rachna Ranade</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLxNHpNhDaEFJsuzKNrMbr_SESDCCLmSu4&si=yI6KcmP0ByChxuwW">Pushkar Raj Thakur</a></li>
+        <li><a href="https://youtube.com/playlist?list=PLKLPWIpGjI0OI7w6KXpor4TAni5B2tL6a&si=eThfHxArv7JlG8Oa">Market feed</a></li>
+        
+    </ul><br>
+
+    <ul style="list-style-type: disc;">
+      <li style="font-size: larger; font-style: italic; color: #000;"><u>News Applications</u></li>
+      <li>Money control</li>
+      <li>Et Market</li>
+      <li>Mint</li>
+      <li>Zee business</li>
+      <li>Bloomberg</li>
+    </ul>
+</div>
+<script src="index.js"></script>
+
+<div class="intro">
+      <h1>What is Trading?</h1>
+      <p>it’s about buying and selling assets with the aim of making a profit</p> 
+    </div>
+
+
+<div class="achievements">
+      <div class="work">
+        <p class="work-heading">Intoduction To Stock Market</p>
+        <p class="work-text">The stock market can play a pivotal role in ensuring your financial security. In this module, you will learn how to get started in the stock market, its fundamentals, how it functions, and the various intermediaries that appertain it.</p>
+
+<button onclick="window.location.href='intoduction.html'">Learn More</button>
+
+      </div>
+
+
+      <div class="work">
+        <p class="work-heading">Fundamental Analysis</p>
+        <p class="work-text">The Fundamental Analysis (FA) module explores Equity research by reading financial statements and annual reports, calculating and analyzing Financial Ratios, and evaluating the intrinsic value of a stock to find long-term investing opportunities.</p>
+<button onclick="window.location.href='fundamental.html'">Learn More</button>
+      </div>
+
+
+      <div class="work">
+        <p class="work-heading">Technical Analysis</p>
+        <p class="work-text">Technical Analysis (TA) helps in developing a point of view. In this module, we will discover the complex attributes, various patterns, indicators, and theories of TA that will help you as a trader to find upright trading opportunities in the market..</p>
+
+<button onclick="window.location.href='technical.html'">Learn More</button>
+
+      </div>
+
+
+<div class="work">
+        <p class="work-heading">Risk Management And Trading psychology</p>
+        <p class="work-text">Trading and investing are subject to risks. Our emotions also influence our choices in the market and could aggravate risks. This module discusses risk and risk management tools along with the psychology required for sustaining in the markets.</p>
+
+<button onclick="window.location.href='risk.html'">Learn More</button>
+
+      </div>
+    
+
+    </div>
+    
+
+
+  <div class="about-me">
+    <div class="about-me-text">
+      <h2>History of Stock Market </h2>
+      <p style="margin-top: 2em;">stock market also known as share market.The concept of share market in India was the basic copy of walls street of usa. The Indian traders see trading there and then as they get Intrest The trading starts.In time there were some reforms which makes it todays  stock market. and also the well known street where the trading was firstly introduce was dalal street of bombay(mumbai).</p>
+    </div>
+    <iframe width="500" height="261" src="https://www.youtube-nocookie.com/embed/P2btJNkz_9g?si=qpxfQAfhrPOc4_0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+
+  <div class="first-me">
+    
+    <iframe width="500" height="261" src="https://www.youtube.com/embed/videoseries?si=KnvClYy98QtdFKz5&amp;list=PLTJB3T_ntKNKiRLv8qk1ymHdQkLiHJG1i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    
+    <div class="first-me-text">
+      <h2>Learn with CA RACHNA RANADE (marathi)</h2>
+      <p style="margin-top: 2em;"> So Here is the link of well known share market analysit CA Rachna Ranade. she is a well known youtuber in India since 2019. she has a good knowledge of stock Market so here is one of the basic starting in stock market.you can also buy primmiun cource if  you want to dive deeper in stock msrket.</p>
+    
+    </div>
+    
+  </div>
+
+
+  <div class="about-me">
+    <div class="about-me-text">
+      <h2>Greed is your god </h2>
+      <p style="margin-top: 2em;">Trading is not just about the money in seconds it about investing for the growth. there are many scammers we face duriing the market who just pump and dumpt the share by buying and selling in large quantity so be aware of the frawd scemes like money double in few days.There are lot of scams iiin market which will advice you to invest may give soe basic profit in starting and then the reson for your welth erruption</p>
+    </div>
+    <img src="images/meme.jpeg" alt="me">
+  </div>
+
+
+
+
+  <div class="contact-container">
+    <div class="contact-box">
+        <div class="contact-text">
+            <h2>Contact Us</h2>
+        </div>
+        <button class="contact-button" onclick="window.location.href='#form'">Visit Form</button>
+    </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="copy">&copy; Learn Trading</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>More Info</span>
+        <a href="Index.html">Home</a>
+        <a href="https://forms.gle/AKEhjFmrqvuRQ6f96">Enroll Now</a>
+        <a href="#">About</a>
+        <a href="form.html">Contact</a>
+      </div>
+      <div class="links">
+        <span>Social Links</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

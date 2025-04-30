@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <nav class="nav-items">
             <a href="index.html">Home</a>
             <a href="https://forms.gle/AKEhjFmrqvuRQ6f96">Enroll Now</a>
-            <a href="#">About</a>
+            <a href="team.html">About</a>
             <a href="form.html">Contact us</a>
             <button onclick="window.location.href='signup.php' ">sign_In</button>
         </nav>

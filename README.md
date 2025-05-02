@@ -22,6 +22,9 @@ Enter your Email and Password.
 
 Click on "Login".
 
+ or give
+ username: Admin@gmail.com
+ password: 12345
 Upon successful login, you'll be redirected to the dashboard/homepage.
 
 
